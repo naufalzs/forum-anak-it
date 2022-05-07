@@ -1,0 +1,42 @@
+// Color Variables
+$brown: #71695f;
+$brownDark: #635c53;
+$green: #33b95a;
+$red: #ff5f2d;
+$gray: #dddddd;
+$grayLight: #eeeeee;
+$black: #333333;
+
+.container {
+  height: 100vh;
+  .navbar {
+    height: 50px;
+    padding: 10px 16px;
+    background-color: $brown;
+    color: white;
+    // display: flex;
+    // justify-content: center;
+    .navbar-content {
+      // min-width: 1024px;
+      width: 1008px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 70% auto;
+      .navbar-left {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .navbar-right {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+    }
+  }
+  .main-content {
+    min-width: 1024px;
+    padding-top: 32px;
+  }
+}
