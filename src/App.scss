@@ -73,8 +73,7 @@ $black: #333333;
     .main-left {
       border-right: 1px solid $gray;
       .section-topic {
-        margin-right: 20px;
-        margin-bottom: 36px;
+        padding: 0 24px 36px 0;
         h1 {
           line-height: 1.1;
           margin-bottom: 24px;
@@ -87,7 +86,7 @@ $black: #333333;
         border-top: 1px solid $gray;
         border-bottom: 1px solid $gray;
         position: relative;
-        padding: 36px 18px 50px 0;
+        padding: 36px 24px 50px 0;
         .title-1 {
           position: absolute;
           top: -18px;
@@ -149,12 +148,60 @@ $black: #333333;
       }
       .section-comment-input {
         position: relative;
-        padding: 18px 0;
+        padding: 30px 0;
+        padding-right: 24px;
         .title-2 {
           position: absolute;
           top: -16px;
           width: 200px;
           background-color: white;
+        }
+        .comment-input-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          row-gap: 10px;
+          grid-template-areas:
+            "ip . . "
+            "ip2 . . "
+            "ip3 ip3 .";
+          .comment-input {
+            // outline: none;
+            border: 2px solid $gray;
+            border-radius: 5px;
+            min-height: 22px;
+            padding: 8px;
+            // :focus {
+            //   outline: 2px solid black;
+            //   border: 2px solid black;
+            // }
+          }
+          .ip-1 {
+            grid-area: ip;
+          }
+          .ip-2 {
+            grid-area: ip2;
+          }
+          .ip-3 {
+            grid-area: ip3;
+          }
+        }
+        .container-btn {
+          margin-top: 10px;
+          display: flex;
+          .btn {
+            // outline: none;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            background-color: $gray;
+            margin-right: 4px;
+            cursor: pointer;
+          }
+          .btn-submit {
+            background-color: $brownDark;
+            color: white;
+            font-weight: bold;
+          }
         }
       }
     }

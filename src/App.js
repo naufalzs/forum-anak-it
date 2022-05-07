@@ -62,6 +62,30 @@ function App() {
           </div>
           <div className="section-comment-input">
             <h3 className="title-2">Tambahkan komentar</h3>
+            <div className="comment-input-container">
+              <input
+                name="name"
+                placeholder="Nama"
+                type="text"
+                className="comment-input ip-1"
+              />
+              <input
+                name="email"
+                placeholder="Email"
+                type="text"
+                className="comment-input ip-2"
+              />
+              <textarea
+                name="comment"
+                placeholder="Komentar anda"
+                className="comment-input ip-3"
+                rows="3"
+              ></textarea>
+            </div>          
+              <div className="container-btn">
+                <button type="button" className="btn">Reset</button>
+                <button type="button" className="btn btn-submit">Submit</button>
+              </div>
           </div>
         </div>
         <div className="main-right">
