@@ -6,8 +6,11 @@ function App() {
       <div className="navbar">
         <div className="navbar-content">
           <div className="navbar-left">
-            <h1 style={{ fontSize: 32 }}>Forum Anak IT</h1>
-            <div>Search Bar</div>
+            <h1>Forum Anak IT</h1>
+            <div className="search-bar">
+              Search
+              <div className="icon-search"></div>
+            </div>
           </div>
           <ul className="navbar-right">
             <li>Categories</li>
