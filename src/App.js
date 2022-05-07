@@ -20,15 +20,72 @@ function App() {
         </div>
       </div>
       <div className="main-content">
-        <div className="main-left"></div>
+        <div className="main-left">
+          <div className="section-topic">
+            <h1>
+              Lampu webcam tiba-tiba menyala sendiri tanpa membuka aplikasi
+              webcam
+            </h1>
+            <p>
+              Mau tanya, akhir-akhir ini webcam sering nyala sendiri. Apakah ada
+              yang tahu penyebabnya dan solusi untuk memperbaiki hal itu? Apakah
+              ada kemungkinan laptop saya di-hack karena kasus terjadi tiap
+              terkoneksi di internet.
+            </p>
+          </div>
+          <div className="section-comment">
+            <h2 className="title-1">Komentar</h2>
+            <div className="comment-container">
+              <div className="pic"></div>
+              <div className="comment-content">
+                <h4>Neal Topham</h4>
+                <div className="comment-date">08 February 2017 07.30</div>
+                <p>
+                  Mungkin ada fenomena paranormal yang tidak bisa dijelaskan.
+                  Lebih baik nyala mati sendiri daripada tidak nyala sama sekali
+                </p>
+                <div className="comment-vote-container">
+                  <p>3 point</p>
+                  <div className="vote-square">1</div>
+                  <div className="vote-square">1</div>
+                </div>
+                <div className="reply-container">
+                  <div className="pic-2"></div>
+                  <div className="comment-content">
+                    <h4>Dyan Shahkin</h4>
+                    <div className="comment-date">08 February 2017 07.30</div>
+                    <p>Confirm, itu kemungkinan aktivitas paranormal.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="section-comment-input">
+            <h3 className="title-2">Tambahkan komentar</h3>
+          </div>
+        </div>
         <div className="main-right">
           <h3>Diskusi 5 Teratas</h3>
           <ul className="trending">
-            <li><div className="num-box">1</div>Cara mengetahui akun Facebook di-hack melalui aplikasi</li>
-            <li><div className="num-box">1</div>Batas aman overclock PC rakitan</li>
-            <li><div className="num-box">1</div>Cara mengetahui akun Facebook di-hack melalui aplikasi</li>
-            <li><div className="num-box">1</div>Cara mengetahui akun Facebook di-hack melalui aplikasi</li>
-            <li><div className="num-box">1</div>Cara mengetahui akun Facebook di-hack melalui aplikasi</li>
+            <li>
+              <div className="num-box">1</div>Cara mengetahui akun Facebook
+              di-hack melalui aplikasi
+            </li>
+            <li>
+              <div className="num-box">1</div>Batas aman overclock PC rakitan
+            </li>
+            <li>
+              <div className="num-box">1</div>Cara mengetahui akun Facebook
+              di-hack melalui aplikasi
+            </li>
+            <li>
+              <div className="num-box">1</div>Cara mengetahui akun Facebook
+              di-hack melalui aplikasi
+            </li>
+            <li>
+              <div className="num-box">1</div>Cara mengetahui akun Facebook
+              di-hack melalui aplikasi
+            </li>
           </ul>
         </div>
       </div>

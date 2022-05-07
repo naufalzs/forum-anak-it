@@ -66,10 +66,97 @@ $black: #333333;
   .main-content {
     width: 1008px;
     padding: 32px 0 0 16px;
+    margin: auto;
     // padding-top: 32px;
     display: grid;
     grid-template-columns: 70% auto;
     .main-left {
+      border-right: 1px solid $gray;
+      .section-topic {
+        margin-right: 20px;
+        margin-bottom: 36px;
+        h1 {
+          line-height: 1.1;
+          margin-bottom: 24px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+      .section-comment {
+        border-top: 1px solid $gray;
+        border-bottom: 1px solid $gray;
+        position: relative;
+        padding: 36px 18px 50px 0;
+        .title-1 {
+          position: absolute;
+          top: -18px;
+          width: 130px;
+          background-color: white;
+        }
+        .comment-container {
+          display: grid;
+          grid-template-columns: 105px auto;
+          row-gap: 26px;
+          .pic {
+            width: 80px;
+            height: 80px;
+            background-color: $green;
+          }
+          .pic-2 {
+            width: 36px;
+            height: 36px;
+            background-color: $green;
+          }
+          .comment-content {
+            h4 {
+              font-size: 14px;
+              margin-top: 4px;
+            }
+            .comment-date {
+              font-size: 12px;
+              margin: 6px 0;
+            }
+            p {
+              font-size: 14px;
+              line-height: 1.5;
+            }
+          }
+          .comment-vote-container {
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: 50px 28px 28px;
+            column-gap: 10px;
+            p {
+              font-size: 14px;
+              display: flex;
+              align-items: center;
+            }
+            .vote-square {
+              width: 28px;
+              height: 28px;
+              background-color: $gray;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+          .reply-container {
+            display: grid;
+            grid-template-columns: 55px auto;
+          }
+        }
+      }
+      .section-comment-input {
+        position: relative;
+        padding: 18px 0;
+        .title-2 {
+          position: absolute;
+          top: -16px;
+          width: 200px;
+          background-color: white;
+        }
+      }
     }
     .main-right {
       padding-left: 20px;
