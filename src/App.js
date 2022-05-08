@@ -1,4 +1,4 @@
-import "./App.scss";
+import "./styles/Main.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlass,
@@ -18,7 +18,8 @@ function App() {
           <div className="navbar-left">
             <h1>Forum Anak IT</h1>
             <div className="search-bar">
-              Search
+              <input type="text" name="search" placeholder="Search" className="search-input"/>
+              {/* Search */}
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
                 className="icon-search"

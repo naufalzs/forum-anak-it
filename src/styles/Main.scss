@@ -1,0 +1,35 @@
+// Color Variables
+@import "colorVariables";
+
+@mixin mobile-responsive {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+.container {
+  height: 100vh;
+  @import "navbar";
+  .main-content {
+    padding: 32px 0 0 16px;
+    width: 1008px;
+    margin: auto;
+    // padding-top: 32px;
+    display: grid;
+    grid-template-columns: 70% auto;
+    @include mobile-responsive {
+      padding: 20px 10px;
+      width: auto;
+      display: block;
+    }
+    @import "mainContent";
+    @import "sidebar";
+  }
+}
+
+// @media (min-width: 769px) {
+//   .navbar {
+//     color: red;
+//   }
+//   // @import "./mobileStyle/mobileResponsive";
+// }
