@@ -1,4 +1,11 @@
 import "./App.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMagnifyingGlass,
+  faArrowUp,
+  faArrowDown,
+} from "@fortawesome/free-solid-svg-icons";
+import {Comments} from "./json/comments.json"
 
 function App() {
   return (
@@ -9,7 +16,10 @@ function App() {
             <h1>Forum Anak IT</h1>
             <div className="search-bar">
               Search
-              <div className="icon-search"></div>
+              <FontAwesomeIcon
+                icon={faMagnifyingGlass}
+                className="icon-search"
+              />
             </div>
           </div>
           <ul className="navbar-right">
@@ -36,7 +46,8 @@ function App() {
           <div className="section-comment">
             <h2 className="title-1">Komentar</h2>
             <div className="comment-container">
-              <div className="pic"></div>
+              {/* <div className="pic"></div> */}
+              <img src="https://picsum.photos/200" alt="" className="pic" />
               <div className="comment-content">
                 <h4>Neal Topham</h4>
                 <div className="comment-date">08 February 2017 07.30</div>
@@ -46,8 +57,12 @@ function App() {
                 </p>
                 <div className="comment-vote-container">
                   <p>3 point</p>
-                  <div className="vote-square">1</div>
-                  <div className="vote-square">1</div>
+                  <div className="vote-square">
+                    <FontAwesomeIcon icon={faArrowUp} className="vote-icon" />
+                  </div>
+                  <div className="vote-square">
+                    <FontAwesomeIcon icon={faArrowDown} className="vote-icon" />
+                  </div>
                 </div>
                 <div className="reply-container">
                   <div className="pic-2"></div>
@@ -81,11 +96,15 @@ function App() {
                 className="comment-input ip-3"
                 rows="3"
               ></textarea>
-            </div>          
-              <div className="container-btn">
-                <button type="button" className="btn">Reset</button>
-                <button type="button" className="btn btn-submit">Submit</button>
-              </div>
+            </div>
+            <div className="container-btn">
+              <button type="button" className="btn">
+                Reset
+              </button>
+              <button type="button" className="btn btn-submit">
+                Submit
+              </button>
+            </div>
           </div>
         </div>
         <div className="main-right">
