@@ -1,0 +1,42 @@
+// Button
+.btn {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  background-color: $gray;
+  margin-right: 4px;
+  cursor: pointer;
+}
+.btn-submit {
+  background-color: $brownDark;
+  color: white;
+  font-weight: bold;
+}
+
+// Input
+.custom-input {
+  // outline: none;
+  border: 2px solid $gray;
+  border-radius: 5px;
+  min-height: 22px;
+  padding: 8px;
+  // :focus {
+  //   outline: 2px solid black;
+  //   border: 2px solid black;
+  // }
+}
+
+.form-input {
+  border: 1px solid #888787;
+  width: calc(100% - 20px);
+}
+
+.form-label{
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+// Other
+.disable-scroll{
+  overflow-y: hidden;
+}

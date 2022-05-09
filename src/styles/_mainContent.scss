@@ -95,17 +95,6 @@
         "ip . . "
         "ip2 . . "
         "ip3 ip3 .";
-      .comment-input {
-        // outline: none;
-        border: 2px solid $gray;
-        border-radius: 5px;
-        min-height: 22px;
-        padding: 8px;
-        // :focus {
-        //   outline: 2px solid black;
-        //   border: 2px solid black;
-        // }
-      }
       .ip-1 {
         grid-area: ip;
       }
@@ -119,20 +108,6 @@
     .container-btn {
       margin-top: 10px;
       display: flex;
-      .btn {
-        // outline: none;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 5px;
-        background-color: $gray;
-        margin-right: 4px;
-        cursor: pointer;
-      }
-      .btn-submit {
-        background-color: $brownDark;
-        color: white;
-        font-weight: bold;
-      }
     }
   }
 

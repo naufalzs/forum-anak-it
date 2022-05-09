@@ -1,5 +1,5 @@
-// Color Variables
 @import "colorVariables";
+@import "components";
 
 @mixin mobile-responsive {
   @media only screen and (max-width: 768px) {
@@ -9,6 +9,8 @@
 
 .container {
   height: 100vh;
+  color: $black;
+  @import "popup";
   @import "navbar";
   .main-content {
     padding: 32px 0 0 16px;
@@ -26,10 +28,3 @@
     @import "sidebar";
   }
 }
-
-// @media (min-width: 769px) {
-//   .navbar {
-//     color: red;
-//   }
-//   // @import "./mobileStyle/mobileResponsive";
-// }

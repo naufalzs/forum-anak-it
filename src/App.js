@@ -4,21 +4,132 @@ import {
   faMagnifyingGlass,
   faArrowUp,
   faArrowDown,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { format } from "date-fns";
 import comments from "./json/comments.json";
 import trendings from "./json/trendings.json";
+import { useState } from "react";
 
 function App() {
+  // const [modal, setModal] = useState(false);
+  const [modalLogin, setModalLogin] = useState(false);
+  const [modalRegister, setModalRegister] = useState(false);
+
   let dateFormat = (date) => format(new Date(date), "dd MMMM yyyy hh:mm");
+
   return (
-    <div className="container">
+    <div
+      className={`container ${
+        (modalLogin || modalRegister) && "disable-scroll"
+      }`}
+    >
+      {(modalLogin || modalRegister) && (
+        <div className="popup-container">
+          {modalLogin && (
+            <div className="form-card">
+              <h2>Login</h2>
+              <div className="form-container">
+                <div>
+                  <label className="form-label" htmlFor="login-email">
+                    Email
+                  </label>
+                  <input
+                    id="login-email"
+                    name="email"
+                    type="text"
+                    className="custom-input form-input"
+                  />
+                </div>
+                <div>
+                  <label className="form-label" htmlFor="login-password">
+                    Password
+                  </label>
+                  <input
+                    id="login-password"
+                    name="password"
+                    type="password"
+                    className="custom-input form-input"
+                  />
+                </div>
+                <div>
+                  <button type="button" className="btn btn-submit">
+                    Login
+                  </button>
+                </div>
+              </div>
+              <div
+                className="close-button"
+                onClick={() => setModalLogin(false)}
+              >
+                <FontAwesomeIcon icon={faXmark} className="icon-close" />
+              </div>
+            </div>
+          )}
+          {modalRegister && (
+            <div className="form-card">
+              <h2>Register</h2>
+              <div className="form-container">
+                <div>
+                  <label className="form-label" htmlFor="register-name">
+                    Nama
+                  </label>
+                  <input
+                    id="register-name"
+                    name="name"
+                    type="text"
+                    className="custom-input form-input"
+                  />
+                </div>
+                <div>
+                  <label className="form-label" htmlFor="register-email">
+                    Email
+                  </label>
+                  <input
+                    id="register-email"
+                    name="email"
+                    type="text"
+                    className="custom-input form-input"
+                  />
+                </div>
+                <div>
+                  <label className="form-label" htmlFor="register-password">
+                    Password
+                  </label>
+                  <input
+                    id="register-password"
+                    name="password"
+                    type="password"
+                    className="custom-input form-input"
+                  />
+                </div>
+                <div>
+                  <button type="button" className="btn btn-submit">
+                    Create account
+                  </button>
+                </div>
+              </div>
+              <div
+                className="close-button"
+                onClick={() => setModalRegister(false)}
+              >
+                <FontAwesomeIcon icon={faXmark} className="icon-close" />
+              </div>
+            </div>
+          )}
+        </div>
+      )}
       <div className="navbar">
         <div className="navbar-content">
           <div className="navbar-left">
             <h1>Forum Anak IT</h1>
             <div className="search-bar">
-              <input type="text" name="search" placeholder="Search" className="search-input"/>
+              <input
+                type="text"
+                name="search"
+                placeholder="Search"
+                className="search-input"
+              />
               {/* Search */}
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
@@ -27,9 +138,18 @@ function App() {
             </div>
           </div>
           <ul className="navbar-right">
-            <li>Categories</li>
-            <li>Login</li>
-            <li>Register</li>
+            <li>
+              Categories
+              <ul className="category-dropdown">
+                <li>Linux</li>
+                <li>Windows</li>
+                <li>MAC OS</li>
+                <li>Android</li>
+                <li>iOS</li>
+              </ul>
+            </li>
+            <li onClick={() => setModalLogin(true)}>Login</li>
+            <li onClick={() => setModalRegister(true)}>Register</li>
           </ul>
         </div>
       </div>
@@ -107,18 +227,18 @@ function App() {
                 name="name"
                 placeholder="Nama"
                 type="text"
-                className="comment-input ip-1"
+                className="custom-input ip-1"
               />
               <input
                 name="email"
                 placeholder="Email"
                 type="text"
-                className="comment-input ip-2"
+                className="custom-input ip-2"
               />
               <textarea
                 name="comment"
                 placeholder="Komentar anda"
-                className="comment-input ip-3"
+                className="custom-input ip-3"
                 rows="3"
               ></textarea>
             </div>
@@ -138,7 +258,7 @@ function App() {
             {trendings?.map((trending) => (
               <li key={trending?.id}>
                 <div className="num-box">{trending?.id}</div>
-                {trending?.topic}
+                <p>{trending?.topic}</p>
               </li>
             ))}
           </ul>
