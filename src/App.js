@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./styles/Main.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,12 +10,12 @@ import {
 import { format } from "date-fns";
 import comments from "./json/comments.json";
 import trendings from "./json/trendings.json";
-import { useState } from "react";
 
 function App() {
   // const [modal, setModal] = useState(false);
   const [modalLogin, setModalLogin] = useState(false);
   const [modalRegister, setModalRegister] = useState(false);
+  const [navbarMenu, setNavbarMenu] = useState(false);
 
   let dateFormat = (date) => format(new Date(date), "dd MMMM yyyy hh:mm");
 
@@ -151,6 +152,46 @@ function App() {
             <li onClick={() => setModalLogin(true)}>Login</li>
             <li onClick={() => setModalRegister(true)}>Register</li>
           </ul>
+          <div
+            className="navbar-mobile-menu"
+            onClick={() => setNavbarMenu(true)}
+          >
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          {navbarMenu && (
+            <ul className="navbar-mobile">
+              <div className="navbar-mobile-header">
+                <div onClick={()=>setNavbarMenu(false)} className="navbar-mobile-close-button">
+                  <FontAwesomeIcon icon={faXmark} className="icon-close" />
+                </div>
+                <div className="search-bar">
+                  <input
+                    type="text"
+                    name="search"
+                    placeholder="Search"
+                    className="search-input"
+                  />
+                  {/* Search */}
+                  <FontAwesomeIcon
+                    icon={faMagnifyingGlass}
+                    className="icon-search"
+                  />
+                </div>
+              </div>
+              <li>Categories</li>
+              <ul className="category-dropdown-mobile">
+                <li>Linux</li>
+                <li>Windows</li>
+                <li>MAC OS</li>
+                <li>Android</li>
+                <li>iOS</li>
+              </ul>
+              <li onClick={() => setModalLogin(true)}>Login</li>
+              <li onClick={() => setModalRegister(true)}>Register</li>
+            </ul>
+          )}
         </div>
       </div>
       <div className="main-content">

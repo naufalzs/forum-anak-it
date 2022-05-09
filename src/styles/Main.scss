@@ -1,11 +1,7 @@
 @import "colorVariables";
 @import "components";
 
-@mixin mobile-responsive {
-  @media only screen and (max-width: 768px) {
-    @content;
-  }
-}
+@import "mixins";
 
 .container {
   height: 100vh;
