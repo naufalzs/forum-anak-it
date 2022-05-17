@@ -1,3 +1,5 @@
+@use "base" as *;
+
 .navbar {
   position: relative;
   padding: 0px 16px;
@@ -111,7 +113,7 @@
         z-index: 1;
         position: absolute;
         top: 0;
-        right: 0;;
+        right: 0;
         background-color: $blackSoft;
         font-size: 16px;
         font-weight: bold;

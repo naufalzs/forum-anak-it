@@ -1,15 +1,8 @@
+@use "base" as *;
+
 .main-left {
   border-right: 1px solid $gray;
-  .section-topic {
-    padding: 0 24px 36px 0;
-    h1 {
-      line-height: 1.1;
-      margin-bottom: 24px;
-    }
-    p {
-      font-size: 14px;
-    }
-  }
+
   .section-comment {
     border-top: 1px solid $gray;
     border-bottom: 1px solid $gray;

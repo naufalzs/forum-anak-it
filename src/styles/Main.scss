@@ -1,26 +1,11 @@
-@import "colorVariables";
+@use "base" as *;
+@use "layout";
+@import "modules";
+
 @import "components";
 
-@import "mixins";
+@import "popup";
+@import "navbar";
 
-.container {
-  height: 100vh;
-  color: $black;
-  @import "popup";
-  @import "navbar";
-  .main-content {
-    padding: 32px 0 0 16px;
-    width: 1008px;
-    margin: auto;
-    // padding-top: 32px;
-    display: grid;
-    grid-template-columns: 70% auto;
-    @include mobile-responsive {
-      padding: 20px 10px;
-      width: auto;
-      display: block;
-    }
-    @import "mainContent";
-    @import "sidebar";
-  }
-}
+@import "mainContent";
+@import "sidebar";

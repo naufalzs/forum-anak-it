@@ -1,4 +1,5 @@
-@import "mixins";
+@use "base" as *;
+
 // Button
 .btn {
   border: none;

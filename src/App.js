@@ -10,6 +10,8 @@ import {
 import { format } from "date-fns";
 import comments from "./json/comments.json";
 import trendings from "./json/trendings.json";
+import ModalPopup from "./components/ModalPopup";
+import Navbar from "./components/Navbar";
 
 function App() {
   // const [modal, setModal] = useState(false);
@@ -21,187 +23,29 @@ function App() {
 
   return (
     <div
-      className={`container ${
-        (modalLogin || modalRegister) && "disable-scroll"
-      }`}
+      id="main-container"
+      className={`${(modalLogin || modalRegister) && "disable-scroll"}`}
     >
-      {(modalLogin || modalRegister) && (
-        <div className="popup-container">
-          {modalLogin && (
-            <div className="form-card">
-              <h2>Login</h2>
-              <div className="form-container">
-                <div>
-                  <label className="form-label" htmlFor="login-email">
-                    Email
-                  </label>
-                  <input
-                    id="login-email"
-                    name="email"
-                    type="text"
-                    className="custom-input form-input"
-                  />
-                </div>
-                <div>
-                  <label className="form-label" htmlFor="login-password">
-                    Password
-                  </label>
-                  <input
-                    id="login-password"
-                    name="password"
-                    type="password"
-                    className="custom-input form-input"
-                  />
-                </div>
-                <div>
-                  <button type="button" className="btn btn-submit">
-                    Login
-                  </button>
-                </div>
-              </div>
-              <div
-                className="close-button"
-                onClick={() => setModalLogin(false)}
-              >
-                <FontAwesomeIcon icon={faXmark} className="icon-close" />
-              </div>
-            </div>
-          )}
-          {modalRegister && (
-            <div className="form-card">
-              <h2>Register</h2>
-              <div className="form-container">
-                <div>
-                  <label className="form-label" htmlFor="register-name">
-                    Nama
-                  </label>
-                  <input
-                    id="register-name"
-                    name="name"
-                    type="text"
-                    className="custom-input form-input"
-                  />
-                </div>
-                <div>
-                  <label className="form-label" htmlFor="register-email">
-                    Email
-                  </label>
-                  <input
-                    id="register-email"
-                    name="email"
-                    type="text"
-                    className="custom-input form-input"
-                  />
-                </div>
-                <div>
-                  <label className="form-label" htmlFor="register-password">
-                    Password
-                  </label>
-                  <input
-                    id="register-password"
-                    name="password"
-                    type="password"
-                    className="custom-input form-input"
-                  />
-                </div>
-                <div>
-                  <button type="button" className="btn btn-submit">
-                    Create account
-                  </button>
-                </div>
-              </div>
-              <div
-                className="close-button"
-                onClick={() => setModalRegister(false)}
-              >
-                <FontAwesomeIcon icon={faXmark} className="icon-close" />
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-      <div className="navbar">
-        <div className="navbar-content">
-          <div className="navbar-left">
-            <h1>Forum Anak IT</h1>
-            <div className="search-bar">
-              <input
-                type="text"
-                name="search"
-                placeholder="Search"
-                className="search-input"
-              />
-              {/* Search */}
-              <FontAwesomeIcon
-                icon={faMagnifyingGlass}
-                className="icon-search"
-              />
-            </div>
-          </div>
-          <ul className="navbar-right">
-            <li>
-              Categories
-              <ul className="category-dropdown">
-                <li>Linux</li>
-                <li>Windows</li>
-                <li>MAC OS</li>
-                <li>Android</li>
-                <li>iOS</li>
-              </ul>
-            </li>
-            <li onClick={() => setModalLogin(true)}>Login</li>
-            <li onClick={() => setModalRegister(true)}>Register</li>
-          </ul>
-          <div
-            className="navbar-mobile-menu"
-            onClick={() => setNavbarMenu(true)}
-          >
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-          {navbarMenu && (
-            <ul className="navbar-mobile">
-              <div className="navbar-mobile-header">
-                <div onClick={()=>setNavbarMenu(false)} className="navbar-mobile-close-button">
-                  <FontAwesomeIcon icon={faXmark} className="icon-close" />
-                </div>
-                <div className="search-bar">
-                  <input
-                    type="text"
-                    name="search"
-                    placeholder="Search"
-                    className="search-input"
-                  />
-                  {/* Search */}
-                  <FontAwesomeIcon
-                    icon={faMagnifyingGlass}
-                    className="icon-search"
-                  />
-                </div>
-              </div>
-              <li>Categories</li>
-              <ul className="category-dropdown-mobile">
-                <li>Linux</li>
-                <li>Windows</li>
-                <li>MAC OS</li>
-                <li>Android</li>
-                <li>iOS</li>
-              </ul>
-              <li onClick={() => setModalLogin(true)}>Login</li>
-              <li onClick={() => setModalRegister(true)}>Register</li>
-            </ul>
-          )}
-        </div>
-      </div>
-      <div className="main-content">
+      <ModalPopup
+        modalLogin={modalLogin}
+        modalRegister={modalRegister}
+        setModalLogin={(value) => setModalLogin(value)}
+        setModalRegister={(value) => setModalRegister(value)}
+      />
+      <Navbar
+        navbarMenu={navbarMenu}
+        setModalLogin={(value) => setModalLogin(value)}
+        setModalRegister={(value) => setModalRegister(value)}
+        setNavbarMenu={(value) => setNavbarMenu(value)}
+      />
+      <div id="main-content">
         <div className="main-left">
           <div className="section-topic">
-            <h1>
+            <h1 className="section-topic--header">
               Lampu webcam tiba-tiba menyala sendiri tanpa membuka aplikasi
               webcam
             </h1>
-            <p>
+            <p className=".section-topic--body">
               Mau tanya, akhir-akhir ini webcam sering nyala sendiri. Apakah ada
               yang tahu penyebabnya dan solusi untuk memperbaiki hal itu? Apakah
               ada kemungkinan laptop saya di-hack karena kasus terjadi tiap
