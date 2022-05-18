@@ -1,0 +1,71 @@
+@use "../base" as *;
+
+.section-comment {
+  position: relative;
+  padding: 36px 24px 50px 0;
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+  @include mobile-responsive {
+    padding-right: 0;
+  }
+}
+.section-comment--header {
+  width: 130px;
+  position: absolute;
+  top: -18px;
+  background-color: white;
+}
+.avatar-big {
+  width: 80px;
+  height: 80px;
+  @include mobile-responsive {
+    width: 36px;
+    height: 36px;
+  }
+}
+.avatar-small {
+  width: 36px;
+  height: 36px;
+}
+
+.comment--content {
+  .comment--header {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .comment--date {
+    font-size: 12px;
+    margin: 6px 0;
+  }
+  .commment--body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+.vote--container {
+  display: grid;
+  grid-template-columns: 45px 28px 28px;
+  column-gap: 4px;
+  margin: 20px 0;
+}
+.vote--text {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.vote-btn--container {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $gray;
+  cursor: pointer;
+}
+
+.vote-btn--icon {
+  width: 12px;
+  height: 12px;
+}

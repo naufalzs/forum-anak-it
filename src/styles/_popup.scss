@@ -16,6 +16,10 @@
     padding: 20px;
     background-color: white;
     position: relative;
+    @include mobile-responsive {
+      width: 100%;
+      margin: 10px;
+    }
     .form-container {
       width: 100%;
       display: grid;
@@ -41,13 +45,7 @@
         width: 12px;
         height: 12px;
       }
-    }
-  }
-  @include mobile-responsive {
-    .form-card {
-      width: 100%;
-      margin: 10px;
-      .close-button {
+      @include mobile-responsive {
         top: 0;
         right: 0;
       }

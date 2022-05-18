@@ -1,18 +1,15 @@
 import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 
-export default function Navbar({
-  setModalLogin,
-  setModalRegister,
-  navbarMenu,
-  setNavbarMenu,
-}) {
+export default function Navbar({ setModalLogin, setModalRegister }) {
+  const [navbarMenu, setNavbarMenu] = useState(false);
+
   return (
     <div className="navbar">
       <div className="navbar-content">
         <div className="navbar-left">
-          <h1>Forum Anak IT</h1>
+          <h1 className="brand-title">Forum Anak IT</h1>
           <div className="search-bar">
             <input
               type="text"

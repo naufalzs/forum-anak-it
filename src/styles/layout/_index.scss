@@ -2,9 +2,10 @@
 
 #main-container {
   height: 100vh;
+  color: $black;
 }
 
-#main-content {
+#content--container {
   display: grid;
   grid-template-columns: 70% auto;
   width: 1008px;
@@ -15,4 +16,25 @@
     width: auto;
     display: block;
   }
+}
+
+#main-content {
+  border-right: 1px solid $gray;
+  @include mobile-responsive {
+    border-right: none;
+  }
+}
+
+#comment--container {
+  display: grid;
+  grid-template-columns: 105px auto;
+  row-gap: 26px;
+  @include mobile-responsive {
+    grid-template-columns: 50px auto;
+  }
+}
+
+#reply--container {
+  display: grid;
+  grid-template-columns: 50px auto;
 }
