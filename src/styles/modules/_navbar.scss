@@ -1,45 +1,44 @@
 @use "../base" as *;
 
 .navbar-content {
-  display: grid;
-  grid-template-columns: 70% auto;
-  width: 1008px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
   margin: auto;
-
-  @include mobile-responsive {
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  @include desktop-responsive {
+    display: grid;
+    grid-template-columns: 70% auto;
+    width: 1008px;
   }
 }
 
 .navbar-content--left {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
-  @include mobile-responsive {
-    padding: 8px 0;
+  align-items: center;
+  padding: 8px 0;
+  @include desktop-responsive {
+    padding: 10px 0;
   }
 }
 
 .brand-title {
-  font-size: 24px;
-  @include mobile-responsive {
-    font-size: 20px;
+  font-size: 20px;
+  @include desktop-responsive {
+    font-size: 24px;
   }
 }
 
 .search-bar {
-  width: 72%;
   position: relative;
+  width: 72%;
 }
 
 .search-input {
-  border: none;
   width: calc(100% - 16px);
   padding: 8px;
+  border: none;
   border-radius: 5px;
   background-color: $brownLight;
   &::placeholder {
@@ -48,7 +47,6 @@
 }
 
 .icon-search {
-  // display: none;
   position: absolute;
   top: 33%;
   right: 2.5%;
@@ -58,42 +56,37 @@
 }
 
 ul.navbar-content--right {
+  display: flex;
   margin-left: 30px;
-  list-style: none;
-  display: flex;
   font-weight: bold;
-
-  @include mobile-responsive {
-    display: none;
-  }
-}
-
-ul.navbar-content--right > li {
-  position: relative;
-  height: 100%;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  &:hover {
-    background-color: $blackSoft;
+  list-style: none;
+  > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    padding: 0 16px;
+    cursor: pointer;
+    &:hover {
+      background-color: $blackSoft;
+    }
   }
 }
 
 ul.navbar-content--right > li:first-child {
   .category-dropdown {
-    position: absolute;
     display: none;
+    position: absolute;
     top: 100%;
     left: 0;
     background-color: #48433c;
     font-size: 16px;
     li {
-      width: 185px;
-      padding: 16px 18px;
       display: flex;
       justify-content: flex-start;
+      width: 185px;
+      padding: 16px 18px;
     }
   }
 }

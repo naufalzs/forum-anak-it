@@ -1,57 +1,56 @@
 @use "../base" as *;
 
 #sidebar {
-  padding-left: 16px;
-  padding-right: 8px;
-  @include mobile-responsive {
-    padding: 0;
-    padding-bottom: 20px;
+  padding: 0 0 20px 0;
+  @include desktop-responsive {
+    padding: 0 8px 0 16px;
   }
 }
 
 .sidebar--header {
-  font-size: 24px;
-  margin-bottom: 18px;
-  @include mobile-responsive {
-    font-size: 20px;
-    margin-bottom: 22px;
+  margin-bottom: 22px;
+  font-size: 20px;
+  @include desktop-responsive {
+    margin-bottom: 18px;
+    font-size: 24px;
   }
 }
 
 #trending {
-  list-style: none;
   display: grid;
   row-gap: 16px;
-  @include mobile-responsive {
-    font-size: 14px;
+  font-size: 14px;
+  list-style: none;
+  @include desktop-responsive {
+    font-size: 16px;
   }
 }
 
 .trending--list {
   display: grid;
-  grid-template-columns: 40px auto;
+  grid-template-columns: 32px auto;
   line-height: 1.5;
-  @include mobile-responsive {
-    grid-template-columns: 32px auto;
+  @include desktop-responsive {
+    grid-template-columns: 40px auto;
   }
 }
 
 .trending--numbering {
-  width: 28px;
-  height: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 20px;
+  height: 20px;
   background-color: $brownDark;
-  color: white;
   font-weight: bold;
-  @include mobile-responsive {
-    width: 20px;
-    height: 20px;
+  color: white;
+  @include desktop-responsive {
+    width: 28px;
+    height: 28px;
   }
 }
 
 .trending--text:hover {
-  cursor: pointer;
   text-decoration: underline;
+  cursor: pointer;
 }

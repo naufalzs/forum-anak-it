@@ -2,25 +2,25 @@
 
 .section-comment {
   position: relative;
-  padding: 36px 24px 50px 0;
+  padding: 36px 0px 50px 0;
   border-top: 1px solid $gray;
   border-bottom: 1px solid $gray;
-  @include mobile-responsive {
-    padding-right: 0;
+  @include desktop-responsive {
+    padding-right: 24px;
   }
 }
 .section-comment--header {
-  width: 130px;
   position: absolute;
   top: -18px;
+  width: 130px;
   background-color: white;
 }
 .avatar-big {
-  width: 80px;
-  height: 80px;
-  @include mobile-responsive {
-    width: 36px;
-    height: 36px;
+  width: 36px;
+  height: 36px;
+  @include desktop-responsive {
+    width: 80px;
+    height: 80px;
   }
 }
 .avatar-small {
@@ -29,15 +29,15 @@
 }
 
 .comment--content {
-  .comment--header {
+  > .comment--header {
     font-size: 14px;
     margin-top: 4px;
   }
-  .comment--date {
+  > .comment--date {
     font-size: 12px;
     margin: 6px 0;
   }
-  .commment--body {
+  > .commment--body {
     font-size: 14px;
     line-height: 1.5;
   }
@@ -56,11 +56,11 @@
 }
 
 .vote-btn--container {
-  width: 24px;
-  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 24px;
+  height: 24px;
   background-color: $gray;
   cursor: pointer;
 }

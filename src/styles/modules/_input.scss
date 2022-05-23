@@ -1,20 +1,20 @@
 @use "../base" as *;
 
 .custom-input {
-  // outline: none;
-  border: 2px solid $gray;
-  border-radius: 5px;
   min-height: 22px;
   padding: 8px;
+  border: 2px solid $gray;
+  border-radius: 5px;
+  // outline: none;
   // :focus {
-  //   outline: 2px solid black;
   //   border: 2px solid black;
+  //   outline: 2px solid black;
   // }
 }
 
 .form-input {
-  border: 1px solid #888787;
   width: calc(100% - 20px);
+  border: 1px solid #888787;
 }
 
 .form-label {

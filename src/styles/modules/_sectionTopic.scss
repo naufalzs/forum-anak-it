@@ -1,18 +1,18 @@
 @use "../base" as *;
 
 .section-topic {
-  padding: 0 24px 36px 0;
-  @include mobile-responsive {
-    padding: 0;
-    padding-bottom: 36px;
+  padding: 0 0 36px 0;
+  @include desktop-responsive {
+    padding: 0 24px 36px 0;
   }
 }
 
 .section-topic--header {
-  line-height: 1.1;
   margin-bottom: 24px;
-  @include mobile-responsive {
-    font-size: 28px;
+  font-size: 28px;
+  line-height: 1.1;
+  @include desktop-responsive {
+    font-size: 32px;
   }
 }
 

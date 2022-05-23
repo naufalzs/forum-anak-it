@@ -3,26 +3,27 @@
 .section-add-comment {
   position: relative;
   padding: 30px 0;
-  padding-right: 24px;
-  .section-add-comment--header {
-    position: absolute;
-    top: -16px;
-    width: 200px;
-    background-color: white;
+  padding-right: 0;
+  @include desktop-responsive {
+    padding-right: 24px;
   }
-  @include mobile-responsive {
-    padding-right: 0;
-  }
+}
+
+.section-add-comment--header {
+  position: absolute;
+  top: -16px;
+  width: 200px;
+  background-color: white;
 }
 
 .comment-input--container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
   grid-template-areas:
-    "ip . . "
-    "ip2 . . "
-    "ip3 ip3 .";
+  "ip . . "
+  "ip2 . . "
+  "ip3 ip3 .";
+  row-gap: 10px;
   .ip-1 {
     grid-area: ip;
   }
@@ -32,11 +33,12 @@
   .ip-3 {
     grid-area: ip3;
   }
-  @include mobile-responsive {
-    grid-template-columns: repeat(1, 1fr);
+  @include desktop-responsive {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
+
 .comment-input--btn-container {
-  margin-top: 10px;
   display: flex;
+  margin-top: 10px;
 }

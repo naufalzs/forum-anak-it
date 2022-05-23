@@ -1,15 +1,15 @@
 @use "../base" as *;
 
 .navbar-mobile-menu {
-  display: none;
-  @include mobile-responsive {
-    width: 12px;
-    height: 12px;
-    display: grid;
-    column-gap: 1px;
-    padding: 8px;
-    background-color: $gray;
-    border-radius: 1px;
+  display: grid;
+  column-gap: 1px;
+  width: 12px;
+  height: 12px;
+  padding: 8px;
+  border-radius: 1px;
+  background-color: $gray;
+  @include desktop-responsive {
+    display: none;
   }
 }
 
@@ -21,21 +21,22 @@
 }
 
 ul.navbar-mobile {
-  display: none;
-  @include mobile-responsive {
-    list-style: none;
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: $blackSoft;
-    font-size: 16px;
-    font-weight: bold;
-    width: 90%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  width: 90%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background-color: $blackSoft;
+  font-size: 16px;
+  font-weight: bold;
+  list-style: none;
+
+  @include desktop-responsive {
+    display: none;
   }
 }
 
@@ -43,20 +44,20 @@ ul.navbar-mobile {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin: 18px 20px 24px 24px;
   width: calc(100% - 40px);
+  margin: 18px 20px 24px 24px;
 }
 
 .navbar-mobile--close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 60px;
   height: 40px;
   margin-bottom: 12px;
   border-radius: 5px;
   background-color: $red;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
 }
 
@@ -66,31 +67,30 @@ ul.navbar-mobile {
 }
 
 .search-bar-mobile {
+  display: block;
   position: relative;
   width: 100%;
-  display: block;
 }
 
 ul.navbar-mobile > li {
-  cursor: pointer;
   width: calc(100% - 2 * (18px + 18px));
-  text-align: right;
   margin: 0 18px;
   padding: 16px 18px;
+  text-align: right;
+  cursor: pointer;
   &:hover {
     background-color: #00000050;
   }
 }
 
 ul.navbar-mobile > ul.category-dropdown-mobile {
+  width: calc(100% - 2 * (10px));
   margin-right: 20px;
   list-style: none;
-  width: calc(100% - 2 * (10px));
   li {
-    text-align: right;
     margin: 0 18px;
     padding: 16px 18px;
-
+    text-align: right;
     &:hover {
       background-color: #00000050;
     }
