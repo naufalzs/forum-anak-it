@@ -1,0 +1,15 @@
+@use "mixins" as *;
+
+.desktop-only {
+  display: block;
+  @include mobile-responsive {
+    display: none;
+  }
+}
+
+.mobile-only {
+  display: none;
+  @include mobile-responsive {
+    display: block;
+  }
+}

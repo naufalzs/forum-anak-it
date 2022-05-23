@@ -1,15 +1,15 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./styles/Main.scss";
 
 import ModalPopup from "./components/ModalPopup";
 import Navbar from "./components/Navbar";
 import SectionTopic from "./components/SectionTopic";
 import SectionComment from "./components/SectionComment";
+import SectionAddComment from "./components/SectionAddComment";
+import Sidebar from "./components/Sidebar";
 
 import comments from "./json/comments.json";
 import trendings from "./json/trendings.json";
-import SectionAddComment from "./components/SectionAddComment";
-import Sidebar from "./components/Sidebar";
 
 function App() {
   const [modalLogin, setModalLogin] = useState(false);
