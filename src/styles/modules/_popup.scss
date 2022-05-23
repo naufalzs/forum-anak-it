@@ -1,0 +1,59 @@
+@use "../base" as *;
+
+.backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: #00000060;
+}
+
+.card--container {
+  position: relative;
+  width: 40%;
+  padding: 20px;
+  background-color: white;
+  @include mobile-responsive {
+    width: 100%;
+    margin: 10px;
+  }
+}
+
+.card--header {
+  margin-bottom: 24px;
+}
+
+.card--content {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 12px;
+  width: 100%;
+}
+
+.close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 28px;
+  height: 28px;
+  background-color: $red;
+  color: white;
+  cursor: pointer;
+
+  @include mobile-responsive {
+    top: 0;
+    right: 0;
+  }
+}
+.icon-close {
+  width: 12px;
+  height: 12px;
+}

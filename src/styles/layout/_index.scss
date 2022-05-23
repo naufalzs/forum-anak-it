@@ -25,6 +25,17 @@
   }
 }
 
+#navbar {
+  position: relative;
+  padding: 0px 16px;
+  background-color: $brown;
+  color: white;
+
+  @include mobile-responsive {
+    padding: 0 12px;
+  }
+}
+
 #comment--container {
   display: grid;
   grid-template-columns: 105px auto;

@@ -1,0 +1,15 @@
+@use "../base" as *;
+
+.btn {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  background-color: $gray;
+  margin-right: 4px;
+  cursor: pointer;
+}
+.btn-submit {
+  background-color: $brownDark;
+  color: white;
+  font-weight: bold;
+}

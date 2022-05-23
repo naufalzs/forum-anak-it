@@ -12,7 +12,6 @@ import SectionAddComment from "./components/SectionAddComment";
 import Sidebar from "./components/Sidebar";
 
 function App() {
-  // const [modal, setModal] = useState(false);
   const [modalLogin, setModalLogin] = useState(false);
   const [modalRegister, setModalRegister] = useState(false);
 

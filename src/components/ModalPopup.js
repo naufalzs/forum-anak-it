@@ -11,10 +11,10 @@ export default function ModalPopup({
   return (
     <>
       {modalLogin && (
-        <div className="popup-container">
-          <div className="form-card">
-            <h2>Login</h2>
-            <div className="form-container">
+        <div className="backdrop">
+          <div className="card--container">
+            <h2 className="card--header">Login</h2>
+            <div className="card--content">
               <div>
                 <label className="form-label" htmlFor="login-email">
                   Email
@@ -50,10 +50,10 @@ export default function ModalPopup({
         </div>
       )}
       {modalRegister && (
-        <div className="popup-container">
-          <div className="form-card">
-            <h2>Register</h2>
-            <div className="form-container">
+        <div className="backdrop">
+          <div className="card--container">
+            <h2 className="card--header">Register</h2>
+            <div className="card--content">
               <div>
                 <label className="form-label" htmlFor="register-name">
                   Nama
